@@ -1,0 +1,130 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #8A00FF; /* Warna ungu latar belakang */
+}
+
+/* Navigation Bar */
+header {
+    background-color: #1DAAE1; /* Warna biru navbar */
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.auth-links a {
+    color: #5A5A5A;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.cart-icon {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+/* Sign In Form Styles */
+.sign-in-container {
+    width: 400px;
+    margin: 100px auto;
+    padding: 30px;
+    background-color: #9C27B0; /* Ungu terang untuk box */
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: white;
+    margin-bottom: 20px;
+}
+
+form input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+}
+
+form input:focus {
+    border: 2px solid #8A00FF;
+}
+
+.btn-signin,
+.btn-signup {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #C6FF00; /* Warna hijau terang */
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btn-signup {
+    margin-top: 20px;
+}
+
+.forgot-password {
+    margin: 10px 0;
+    color: white;
+    font-size: 14px;
+}
+
+.signup-text {
+    margin: 10px 0;
+    color: white;
+    font-size: 14px;
+}
+
+.signup-text a {
+    color: #C6FF00;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* WhatsApp Icon */
+.whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+.whatsapp-icon img {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}

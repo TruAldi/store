@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Page</title>
+    <link rel="stylesheet" href="style ticket.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="ticket.html">TICKET</a></li>
+                <li><a href="merchandise.html">MERCHANDISE</a></li>
+                <li><a href="#">VENUE</a></li>
+                <li><a href="About.html">ABOUT</a></li>
+                <li><a href="ContactUs.html">CONTACT US</a></li>
+            </ul>
+            <div class="auth-links">
+                <a href="signin.html">SIGN UP</a> | <a href="#">SIGN IN</a>
+                <span class="cart-icon">🛒</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Ticket Section -->
+    <main>
+        <div class="ticket-container">
+            <h2>ADMISSION</h2>
+            <div class="ticket-info">
+                <p><strong>3 DAY PASS - LOYALTY TICKET</strong></p>
+                <p>PRICE: <strong>Rp 350.000</strong></p>
+                <p>QTY: <span class="sold-out">*SOLD*</span></p>
+                <p class="note">* Harga sudah termasuk Pajak dan Biaya Penanganan.</p>
+            </div>
+            <hr>
+            <h3>BILLING INFORMATION</h3>
+            <form>
+                <label for="email">Email *</label>
+                <input type="email" id="email" placeholder="Type your email..." required>
+
+                <label for="confirm-email">Confirm Email *</label>
+                <input type="email" id="confirm-email" placeholder="Type your email..." required>
+
+                <label for="name">Name *</label>
+                <input type="text" id="name" placeholder="Fullname" required>
+
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" placeholder="+62xxx" required>
+
+                <button type="submit" class="buy-button">BUY</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

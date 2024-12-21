@@ -1,0 +1,194 @@
+/* Reset Default Browser Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f3eef0; 
+}
+
+/* Navigation Styles */
+header {
+    background-color: #f591d7; 
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.auth-links a {
+    color: #fc67b9;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.cart-icon {
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    position: relative;
+    text-align: center;
+}
+
+.title {
+    font-size: 48px;
+    font-weight: bold;
+    color: black;
+}
+
+.subtitle {
+    font-size: 48px;
+    color: black;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* CSS untuk logo */
+.hero .logo {
+    width: 200px; /* Ganti ukuran sesuai kebutuhan */
+    height: 200Px; /* Menjaga proporsi logo */
+    display: block;
+    margin: 10px; /* Agar logo berada di tengah */
+}
+/* Add petals */
+.Star-shape::before,
+.Star-shape::after {
+    content: "";
+    position: absolute;
+    background-color: #1A1A1A;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+.flower-shape::before {
+    top: -150px;
+}
+
+.flower-shape::after {
+    left: -150px;
+}
+body {
+    background-color: #f3eef0; /* Warna fallback jika gambar tidak muncul */
+    background-image: url('Baground.jpg'); /* Path ke gambar Anda */
+    background-size: 650px; /* Menyesuaikan ukuran gambar agar penuh */
+    background-position: center; /* Posisi gambar di tengah */
+    background-attachment: fixed; /* Membuat background tetap ketika scroll */
+}
+/* Footer Styles */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+}
+/* Cart Container Styling */
+.cart-container {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 400px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}/* Reset Default Browser Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    height: 100%; /* Pastikan tinggi penuh */
+}
+
+body {
+    display: flex;
+    flex-direction: column; /* Mengatur flexbox vertikal */
+    min-height: 100vh; /* Minimal tinggi viewport */
+    background-color: #f3eef0; /* Warna background */
+}
+
+header {
+    background-color: #f591d7;
+    padding: 10px 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+}
+
+.navbar ul li {
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.auth-links a {
+    color: #fc67b9;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+main {
+    flex: 1; /* Mendorong footer ke bawah */
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #f591d7;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: black;
+}

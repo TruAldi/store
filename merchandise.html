@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M-Tri Fest</title>
+    <link rel="stylesheet" href="merchandise.css">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="Home.html">HOME</a></li>
+                <li><a href="ticket.html">TICKET</a></li>
+                <li><a href="merchandise.html">MERCHANDISE</a></li>
+                <li><a href="#">VENUE</a></li>
+                <li><a href="About.html">ABOUT</a></li>
+                <li><a href="ContactUs.html">CONTACT US</a></li>
+            </ul>
+            <div class="auth-links">
+                <a href="signin.html">SIGN UP</a> | <a href="#">SIGN IN</a> 
+                <span class="cart-ico`n">🛒</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="merchandise-page">
+        <h1>Exclusive Merchandise</h1>
+        <div class="merch-grid">
+            <div class="product-card">
+                <img src="Tshirt.jpg" alt="T-shirt">
+                <h3>Tri Fest T-shirt</h3>
+                <p class="price">Rp 200.000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="Hat.jpg" alt="Hat">
+                <h3>Festival Hat</h3>
+                <p class="price">Rp 120.000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="poster.jpg" alt="Poster">
+                <h3>Event Poster</h3>
+                <p class="price">Rp 100.000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <img src="Hoodie.jpg" alt="Hoodie">
+                <h3>Hoodie Limited</h3>
+                <p class="price">Rp 350.000</p>
+                <button class="add-to-cart">Add to Cart</button>
+            </div>
+        </div>
+    </main>
+    
+<div class="cart-container">
+    <h2>Your Cart</h2>
+    <ul class="cart-items"></ul>
+    <div class="cart-total">
+        <strong>Total: </strong> <span id="cart-total">Rp 0</span>
+    </div>
+</div>
+<script>
+    // Array untuk menyimpan data cart
+    const cart = [];
+
+    // Harga total awal
+    let total = 0;
+
+    // Fungsi untuk menambahkan item ke cart
+    function addToCart(productName, productPrice) {
+        // Tambahkan item ke array cart
+        cart.push({ name: productName, price: productPrice });
+        
+        // Update total harga
+        total += productPrice;
+
+        // Render ulang cart
+        renderCart();
+    }
+
+    // Fungsi untuk merender cart
+    function renderCart() {
+        const cartItemsContainer = document.querySelector(".cart-items");
+        const cartTotal = document.getElementById("cart-total");
+
+        // Hapus konten sebelumnya
+        cartItemsContainer.innerHTML = "";
+
+        // Render ulang setiap item
+        cart.forEach((item, index) => {
+            const li = document.createElement("li");
+            li.innerHTML = `${item.name} - Rp ${item.price.toLocaleString()} 
+                            <button onclick="removeFromCart(${index})" style="color: red; border: none; background: none; cursor: pointer;">X</button>`;
+            cartItemsContainer.appendChild(li);
+        });
+
+        // Update total harga
+        cartTotal.innerText = `Rp ${total.toLocaleString()}`;
+    }
+
+    // Fungsi untuk menghapus item dari cart
+    function removeFromCart(index) {
+        // Kurangi total harga
+        total -= cart[index].price;
+
+        // Hapus item dari array
+        cart.splice(index, 1);
+
+        // Render ulang cart
+        renderCart();
+    }
+
+    // Tambahkan event listener ke tombol Add to Cart
+    document.querySelectorAll(".add-to-cart").forEach((button, index) => {
+        button.addEventListener("click", () => {
+            const productCard = button.closest(".product-card");
+            const productName = productCard.querySelector("h3").innerText;
+            const productPrice = parseInt(productCard.querySelector(".price").innerText.replace("Rp ", "").replace(".", ""));
+
+            addToCart(productName, productPrice);
+        });
+    });
+
+// Event listener untuk form pembayaran
+document.getElementById("payment-form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Mencegah reload halaman
+    
+    // Ambil data dari form pembayaran
+    const fullName = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const paymentMethod = document.getElementById("payment-method").value;
+    
+    // Validasi jika cart kosong
+    if (cart.length === 0) {
+        alert("Keranjang belanja kosong! Silakan tambahkan item terlebih dahulu.");
+        return;
+    }
+
+    // Tampilkan pesan sukses
+    alert(`Pembayaran berhasil!\n\nDetail Pembayaran:\nNama: ${fullName}\nEmail: ${email}\nMetode Pembayaran: ${paymentMethod}\nTotal: Rp ${total.toLocaleString()}`);
+
+    // Reset cart dan form
+    cart.length = 0;
+    total = 0;
+    renderCart();
+    document.getElementById("payment-form").reset();
+});
+
+</script> 
+
+<!-- Checkout Section -->
+<div class="checkout-container">
+    <h2>Checkout</h2>
+    <form id="payment-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="payment-method">Payment Method:</label>
+        <select id="payment-method" name="payment-method" required>
+            <option value="" disabled selected>-- Select Payment Method --</option>
+            <option value="Credit Card">Credit Card</option>
+            <option value="Bank Transfer">Bank Transfer</option>
+            <option value="e-Wallet">E-Wallet</option>
+        </select>
+
+        <button type="submit" class="pay-btn">Proceed to Payment</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2024 Tri Fest</p>
+</footer>
+<!-- Cart Section -->
+
+</body>
+</html>
